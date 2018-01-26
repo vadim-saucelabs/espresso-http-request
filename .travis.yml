@@ -1,0 +1,18 @@
+language: android
+android:
+  components:
+    - build-tools-23.0.1
+    - android-21
+    - extra-google-m2repository
+    - extra-android-m2repository
+before_install:
+  - chmod +x gradlew
+script:
+  - travis_wait ./gradlew testobjectUpload --stacktrace
+notifications:
+  email: false
+  
+  slack:
+    on_success: change
+    on_failure: always
+    secure: T4kCeM+SrDgFpr1oMbi+3pPQTGxfAiSK0xepTCnVYpiJaFXSK0kefbmBsTouHoqgqUotPXfihSMo242KWJip5oxg+xMFF+mYznxQWphe8hrq2gtyPrQ2pAf8cJdbhgSqHYAVUzZaa6H31yhyoFH0pCF1B/iO+5DF3S+tgCa1Ha00AcGOR6szclCipqwqupy42ZImcEGEyGFEjTPqdidK6oh3lk7ejeOQqAFN32bMGNaDDABw68Ge5/RhZdmMxQGp3CDa18DcYCs+sXHFr/KynVCBEy/fu9V6BGM0p3cHNPp/T5p4bg8jFKR61kTM8noVzdllDXExZaapihCujU4OSJEtUysFj5TcADxym7KfweNsz6UHWUObDoIfTsElZ31qbowB0RvsIl/R8g06WcdPH8pvJY9/DX17LIqWd6bcLqLi8PK6ZyJTSfgaXcPZ8gkOIExavhB1YpIaMKtpW52kRLEOSB7XCMBMyWHmtiqrZ9JOwYpgzBoOAfBEEeE94g206TB+87TTJC8bU5sX4nti62ljww4dIdu6uUJ1G4Drc3LrRuNQ+GkEmEA7G4kBnhcKz94ubWtyHOos5vdwoskodNXLxBPaitui3BQ5IKB9UbC7QGzhG5Y0dP6jJGMVpAS+HbDLJC+Fr9wckZFGrXpl9mkMP/tyWUMmqunArBP4m2o=
